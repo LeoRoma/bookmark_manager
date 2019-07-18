@@ -1,4 +1,5 @@
 require 'pg'
+
 feature 'it has some bookmarks' do
   scenario 'check the page is working' do
     connection = PG.connect(dbname: 'bookmark_manager_test')

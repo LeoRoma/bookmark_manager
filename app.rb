@@ -4,6 +4,8 @@ require 'pg'
 
 class BookmarkManager < Sinatra::Base
 
+  enable :sessions, :method_override
+
   get '/' do
      @bookmarks = Bookmark.all
     erb :index
@@ -15,6 +17,11 @@ class BookmarkManager < Sinatra::Base
 
   post '/save_url' do
     Bookmark.create(url: params[:url], title: params[:title])
+    redirect('/')
+  end
+
+  delete '/bookmarks/:id' do
+    Bookmark.delete(id: params[:id])
     redirect('/')
   end
 

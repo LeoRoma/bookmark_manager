@@ -30,6 +30,11 @@ class Bookmark
     end
   end
 
+  def self.delete(id:)
+    self.connection.exec("DELETE FROM bookmarks WHERE id = #{id};")
+  end
+
+
   ## non-refactored version below
 
   # def self.create(url_to_save)
