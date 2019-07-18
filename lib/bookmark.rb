@@ -34,6 +34,15 @@ class Bookmark
     self.connection.exec("DELETE FROM bookmarks WHERE id = #{id};")
   end
 
+  def self.update(id:, title:, url:)
+    result = self.connection.exec("UPDATE bookmarks SET url = '#{url}', title = '#{title}' WHERE id = #{id} RETURNING id, url, title;")
+    Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
+  end
+
+  def self.find(id:)
+    result = self.connection.exec("SELECT * FROM bookmarks WHERE id = #{id};")
+    Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
+  end
 
   ## non-refactored version below
 
