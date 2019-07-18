@@ -5,6 +5,7 @@ feature "adding bookmarks" do
     fill_in 'url', :with => 'http://www.github.com'
     fill_in 'title', :with => 'github'
     click_button('Submit')
+    
     expect(page).to have_link('github', href: 'http://www.github.com')
   end
 end
