@@ -3,7 +3,6 @@ require 'database_helper'
 
 describe Bookmark do
   let(:bookmark) { double :bookmark }
-  let(:bookmarks_list) { described_class.new }
 
   describe '.all' do
     it 'returns a list of bookmarks' do
@@ -56,7 +55,7 @@ describe Bookmark do
       expect(updated_bookmark.url).to eq 'http://www.snakersacademy.com'
     end
   end
-  
+
   describe '.find' do
     it 'returns the requested bookmark object' do
       bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
