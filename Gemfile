@@ -12,7 +12,7 @@ gem "sinatra", "~> 2.0"
 
 gem "rspec", "~> 3.8"
 
-gem "rack", "~> 2.0"
+gem "rack", "~> 2.1"
 
 gem "rubocop", "~> 0.72.0"
 
