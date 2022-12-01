@@ -8,7 +8,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "capybara", "~> 3.25"
 
-gem "sinatra", "~> 2.0"
+gem "sinatra", "~> 2.2"
 
 gem "rspec", "~> 3.8"
 
